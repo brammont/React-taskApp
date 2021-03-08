@@ -2,3 +2,9 @@
   text-align: center;
 }
 
+#App-footer{
+  background: #276678;
+  color: #f6f5f5;
+  border-top: 1px solid #c1e1ec;
+  height: 50px;
+}

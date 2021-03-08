@@ -15,8 +15,8 @@ function App() {
         <section>
           <ViewTask />
         </section>
-        <footer>
-        footer
+        <footer id="App-footer" className="navbar fixed-bottom">
+          <p>brammont</p>
       </footer>
       </div>
       
