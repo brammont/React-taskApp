@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import task from '../assets/completed-task.svg';
-import { todos } from '../todos.json';
 import './AddingTask.css';
 class AddingTask extends Component{
    constructor(){
@@ -17,15 +16,15 @@ class AddingTask extends Component{
     }
     handleInputTask(e){
         const {value, name} = e.target;
-        console.log(value, name);
         this.setState({
             [name]: value
     });
   }
     handleSubmit(e) {
        e.preventDefault();
-
-      }
+       this.props.onAddTask(this.state);
+       
+       }
     render(){
         return(
             <div class="container d-flex justify-content-center">
@@ -37,14 +36,14 @@ class AddingTask extends Component{
                         <div className="card">
                             <div className="card-header">
                                 <h3>Task Manager</h3>
-                                <form onSubmit={this.handleSubmit} className="card-body">
+                                <form onSubmit={this.handleSubmit} className="card-body ">
                                 <div class="form-group">
                                     <label>Title:</label>
                                     <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Title" name="title" onChange={this.handleInputTask}/>
                                 </div>
                                 <div class="form-group">
                                     <label>Responsible:</label>
-                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter name" name="Responsible" onChange={this.handleInputTask}/>
+                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter name" name="responsible" onChange={this.handleInputTask}/>
                                 </div>
                                 <div class="form-group">
                                 <label>Priority:</label>
